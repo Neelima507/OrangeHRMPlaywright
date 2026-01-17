@@ -4,7 +4,7 @@ import { expect } from "playwright/test"
 import { PageObjectManager } from "../pageObjectManager/pageObjects";
 import { DashboardOrangePage } from "../pages/dashboardOrangePage";
 
-test.skip('@Orange login with invalid credentials', async ({ pom }) => {
+test('@Orange login with invalid credentials', async ({ pom }) => {
     await pom.loginPage.url();
     await pom.loginPage.userName(LOGIN_ORANGE_TESTDATA.invalid.username);
     await pom.loginPage.passWord(LOGIN_ORANGE_TESTDATA.invalid.password);
@@ -21,5 +21,6 @@ test('@Orange login with valid credentials', async ({ pom }) => {
     await pom.loginPage.loginBtn();
     await expect(pom.loginPage.page).toHaveURL(/dashboard/);
     await pom.dashboardPage.clickAdminLink();
+    console.log("******");
 
 })
