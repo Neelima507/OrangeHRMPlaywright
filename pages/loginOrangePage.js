@@ -1,12 +1,13 @@
 import { LOGIN_ORANGE_LOCATORS } from "../locators/loginOrangeLocators";
 import { LOGIN_ORANGE_TESTDATA } from "../testData/loginOrangeTestData";
+import { CONFIGURL } from "../config/dev.config";
 
 export class LoginOrangePage {
     constructor(page) {
         this.page = page;
     }
     async url() {
-        await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+        await this.page.goto(CONFIGURL.baseURLSE)
     }
     async userName(username) {
         await LOGIN_ORANGE_LOCATORS.username(this.page).fill(username);
