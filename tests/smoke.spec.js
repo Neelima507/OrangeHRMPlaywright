@@ -1,6 +1,6 @@
 import { test, expect } from "playwright/test"
 
-test('@Drops dynamic', async ({ page }) => {
+test('@Drops dynamics', async ({ page }) => {
     await page.goto("https://www.yatra.com/");
     //await page.locator('//div[@role="Combobox"]').first().click();
     const locatorobj = page.locator('.css-j7m7g0').first();
@@ -18,5 +18,6 @@ test('@Drops dynamic', async ({ page }) => {
     await dropnames.locator('ul li div span').filter({ hasText: 'New York' }).click();
     await page.waitForTimeout(200);
     await expect(locatorobj).toHaveText('new york');
+    console.log("smoke")
     console.log("smoke")
 })
