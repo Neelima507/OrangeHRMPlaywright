@@ -9,6 +9,7 @@ test('@Drops dynamic', async ({ page }) => {
         await dialog.accept(); // or dialog.dismiss()
         const locator = page.getByText('Swag Labs')
         console.log('text ', locator.innerText());
+        console.log('inner text is ', locator.innerText());
 
     });
 })
